@@ -6,7 +6,7 @@ const PokemonList = ({searchOn,myPokedex,setMyPokedex}) => {
         <section className = "pokeList">
             {myPokedex.length > 0 && 
                 <p 
-                    style = {{fontSize:'1.25rem',width:'100%',textAlign:'center',cursor:'pointer'}}
+                    style = {{fontSize:'1.25rem',width:'100%',textAlign:'center',cursor:'pointer',color:'#ec5656'}}
                     onClick = {()=>{setMyPokedex([])}}
                 >
                     Clear pokedex

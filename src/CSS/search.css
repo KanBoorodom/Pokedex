@@ -22,12 +22,22 @@
     background-color: inherit;
     box-sizing: border-box;
 }
+.search__magnify{
+    position: absolute;
+    right: 2%;
+    top: 22%;
+    z-index: 10;
+    width: 8%;
+    cursor:pointer;
+}
 .search__input{
     width:100%;
     margin-top:1em;
     padding:1em .5em;
     font-family: 'Gaegu', cursive;
     font-size:1.75rem;
+    font-weight: 700;
     border:2px solid #e6e6e6;
+    outline: none;
     box-sizing: border-box;
 }

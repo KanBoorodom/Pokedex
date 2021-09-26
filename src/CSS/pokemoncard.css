@@ -16,7 +16,7 @@
     margin-top: 2em;
 }
 .pokeCard--Search{
-    width:90%;
+    width:95%;
     padding:1.25em;
     margin:0 auto 2em auto;
     box-sizing: border-box;
@@ -38,7 +38,9 @@
 }
 .pokeCard__name{
     font-family: 'Gaegu', cursive;
+    font-weight: lighter;
     align-self: center;
+    font-size: 3rem;
 }
 .pokeCard:hover{
     box-shadow: 0 4px 8px 0 #aeaeae;
@@ -75,6 +77,7 @@
     display:block;
     height:35px;
     background-color:#f3701a;
+    box-shadow: 0 4px 8px 0 #9d333387;
     border-radius: 15px;
 }
 .cute{

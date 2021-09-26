@@ -1,3 +1,9 @@
+/* 
+Hello I'm Kan Boorodom
+First I want to thank you for give me an oppotunity to do this test.
+I add some of my own features that I think it will suit with this application.
+Thank you
+*/
 import React, { Component } from 'react'
 import './App.css'
 import Pokedex from './Component/Pokedex'

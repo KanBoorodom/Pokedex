@@ -1,0 +1,83 @@
+.pokeList{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:.5em;
+}
+.pokeCard,.pokeCard--Search{
+    display:flex;
+    position:relative;
+    height:fit-content;
+    background:#f3f4f7;
+    box-shadow: 0 4px 8px 0 #d5d6dc;
+    padding: 1em 1.75em 1em .5em;
+    gap:.75em;
+    width:45%;
+    margin-top: 2em;
+}
+.pokeCard--Search{
+    width:90%;
+    padding:1.25em;
+    margin:0 auto 2em auto;
+    box-sizing: border-box;
+}
+.pokeCard__add,.pokeCard__del{
+    font-size:1.5rem;
+    color:#ec5656;
+    opacity:0;
+    cursor:pointer;
+    align-self: center;
+    margin-right:.5em;
+}
+.pokeCard:hover .pokeCard__del,
+.pokeCard--Search:hover .pokeCard__add{
+    opacity:1;
+}
+.pokeCard:last-of-type{
+    margin-bottom:250px;
+}
+.pokeCard__name{
+    font-family: 'Gaegu', cursive;
+    align-self: center;
+}
+.pokeCard:hover{
+    box-shadow: 0 4px 8px 0 #aeaeae;
+}
+.pokeCard__img{
+    width:50%;
+}
+.pokeCard__infoContainer{
+    width:100%;
+}
+.poke__info{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:.75em;
+}
+.pokeInfo__name,.pokeInfo__name--Search{
+    font-size:1.25rem;
+}
+.pokeInfo__name--Search{
+    width:15%;
+}
+.pokeInfo__bar,.pokeInfo__bar--Search{
+    background-color:#e4e4e4;
+    box-shadow: 0 4px 8px 0 #d4d4d4;
+    border-radius: 15px;
+    height:35px;
+    width:165px;
+}
+.pokeInfo__bar--Search{
+    width:80%;
+}
+.pokeBar__percent{
+    display:block;
+    height:35px;
+    background-color:#f3701a;
+    border-radius: 15px;
+}
+.cute{
+    width:16%;
+    margin:.25em;
+}

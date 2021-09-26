@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-
+import Pokedex from './Component/Pokedex'
 const COLORS = {
   Psychic: "#f8a5c2",
   Fighting: "#f0932b",
@@ -15,10 +15,12 @@ const COLORS = {
   Fire: "#eb4d4b"
 }
 
+
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Pokedex />
       </div>
     )
   }

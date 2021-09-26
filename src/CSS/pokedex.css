@@ -1,0 +1,45 @@
+.pokedex,.pokedex--searchOn{
+    height:100%;
+    overflow: auto;
+}
+.pokedex--searchOn{
+}
+.pokedex--searchOn::after{
+    content:'';
+    position: absolute;
+    width:100%;
+    height:100%;
+    background:#000000a3;
+    top:0;
+    z-index: 2;
+}
+.pokedex__header{
+    position:sticky;
+    top:0;
+    z-index:2;
+    background:#ffffff;
+    text-transform: capitalize;
+    text-align: center;
+    font-size:2.5rem;
+}
+
+.addPokemon{
+    background-color:#ec5656;
+    width:100%;
+    height:80px;
+    position:absolute;
+    bottom:0;
+}
+.addPokemon__plusSign{
+    position:absolute;
+    bottom:0;
+    left:40%;
+    background-color:#ec5656;
+    color:white;
+    font-size:7rem;
+    width:fit-content;
+    text-align: center;
+    padding:0 70px;
+    border-radius: 100%;
+    cursor:pointer;
+}

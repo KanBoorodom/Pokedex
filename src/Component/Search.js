@@ -108,7 +108,7 @@ const Search = ({searchOn,myPokedex,setMyPokedex,limit,setLimit}) => {
             onClick = {e => e.stopPropagation()}
         >
             {
-                search !== '' && <p style = {{fontSize:'1.25rem',width:'100%',textAlign:'center'}}>
+                search !== '' && <p className = "searchContainer__p">
                     Type for filter search or Enter for specific search</p>
             }
             <form onSubmit = {submitHandle} className = 'search'>
@@ -125,21 +125,21 @@ const Search = ({searchOn,myPokedex,setMyPokedex,limit,setLimit}) => {
                 <img src={magnify} onClick = {submitHandle} alt="magnify" className = "search__magnify"/>
             </form>
             {
-                loading ? <p style = {{fontSize:'2rem',width:'100%',textAlign:'center'}} >Loading Data</p> 
+                loading ? <p  className = "searchContainer__p" style = {{fontSize:'2rem'}} >Loading Data</p> 
                 : filterResult.length > 0 ? filterResult.map( p => <PokemonCard 
                                                     poke = {p} 
                                                     searchOn = {searchOn} 
                                                     myPokedex = {myPokedex}
                                                     setMyPokedex = {setMyPokedex}
                                                     key = {p.id}/>)
-                :   <p style = {{fontSize:'2rem',width:'100%',textAlign:'center',marginBottom:'5em'}}>
+                :   <p className = "searchContainer__p" style = {{fontSize:'2rem',marginBottom:'5em'}}>
                         Nothing found try enter specific name,type <br /> or maybe there is a typo mistake
                     </p>
 
             }
             {/* fetch data เพิ่มทีละ 10 */}
             {(!loading && limit !== 100 && search === '') && 
-                <p onClick = {handleClick} style = {{fontSize:'2rem',width:'100%',textAlign:'center',cursor:'pointer',color:'#ff1414'}}>
+                <p onClick = {handleClick} className = "searchContainer__p" style = {{fontSize:'2rem',cursor:'pointer',color:'#ff1414'}}>
                     Load more pokemon
                 </p>
             }

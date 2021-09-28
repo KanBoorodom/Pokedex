@@ -13,45 +13,45 @@ const Search = ({searchOn,myPokedex,setMyPokedex,limit,setLimit}) => {
 
     const firstRender = useRef(true)
 
+
+
     useEffect(()=>{
-            const fetchData = async() => {
+        let unmount = false
+        if(!unmount){
+            const fetchData = async () => {
                 setLoading(true)
-                await fetch(`http://localhost:3030/api/cards?limit=${limit}`)
-                .then(res => res.json())
-                .then(
-                result => {
-                    setPokemonFetch(result.cards)
-                    setLoading(false)
-                },
-                (error) => {
-                    console.log(error)
-                }
-                )
+                const res = await fetch(`http://localhost:3030/api/cards?limit=${limit}`)
+                const resData = await res.json()
+                setPokemonFetch(resData.cards)
+                setLoading(false)
             }
-            fetchData()
+            fetchData()    
+        }
+        return () => {
+            unmount = true
+        }
         },[limit])
 
     useEffect(()=>{
         /* search แบบกด enter เพื่อเจาะจง name or type */
-        if(!firstRender.current){
-            const fetchSpecific = async(queryName) => {
-                    setLoading(true)
-                    await fetch(`http://localhost:3030/api/cards?${queryName}=${specificSearch}`)
-                    .then(res => res.json())
-                    .then(
-                        result => {
-                            if(result.cards.length !== 0){
-                                setSpecificResult(result.cards)
-                            }
-                        },
-                        (error) => {
-                            console.log(error)
-                        }
-                    )
-                    setLoading(false)
-            }        
+        let unmount = false
+        if(! unmount && !firstRender.current){
+            const fetchSpecific = async (queryName) => {
+                setLoading(true)
+                const res = await fetch(`http://localhost:3030/api/cards?limit=1xxadsad00&${queryName}=${specificSearch}`)
+                const resData = await res.json()
+                if(resData.cards.length !== 0){
+                    setSpecificResult(resData.cards)
+                }
+                else{
+                    fetchSpecific('type')
+                }
+                setLoading(false)
+            }
             fetchSpecific('name')
-            fetchSpecific('type')
+        }
+        return () => {
+            unmount = true
         }
     }, [specificSearch])
     
